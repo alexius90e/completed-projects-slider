@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="Completed projects" />
+    <title>Completed projects</title>
+    <link rel="shortcut icon" href="./favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="./css/index.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js" defer></script>
+    <script type="module" src="./js/index.js" defer></script>
+  </head>
+  <body>
+    <section class="slider">
+      <div class="slider__container">
+        <nav class="slider__nav">
+          <button class="slider__nav-btn active" data-page="admiralRostovOnDon">
+            Rostov-on-Don, Admiral
+          </button>
+          <button class="slider__nav-btn" data-page="thievesSochi">Sochi Thieves</button>
+          <button class="slider__nav-btn" data-page="patrioticRostovOnDon">
+            Rostov-on-Don Patriotic
+          </button>
+        </nav>
+
+        <div class="slider__page active" id="admiralRostovOnDon">
+          <h2>pageOne</h2>
+          <div class="slider__swiper"></div>
+          <div class="slider__info"></div>
+        </div>
+
+        <div class="slider__page" id="thievesSochi">
+          <h2>pageTwo</h2>
+          <div class="slider__swiper"></div>
+          <div class="slider__info"></div>
+        </div>
+
+        <div class="slider__page" id="patrioticRostovOnDon">
+          <h2>pageThree</h2>
+          <div class="slider__swiper"></div>
+          <div class="slider__info"></div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

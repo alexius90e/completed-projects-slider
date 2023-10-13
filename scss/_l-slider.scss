@@ -1,0 +1,49 @@
+.slider {
+  padding: 107px 0 125px;
+  color: $white;
+  font-family: 'Yeseva One', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 190.96%; /* 26.734px */
+  background-color: $black;
+
+  &__container {
+    max-width: 1170px;
+    margin: 0 auto;
+    padding: 0 16px;
+  }
+
+  &__nav {
+    display: flex;
+    gap: 60px;
+
+
+    &-btn {
+      padding: 0 0 7px;
+      color: $white;
+      font-family: 'Yeseva One', sans-serif;
+      font-size: 14px;
+      font-weight: 400;
+      line-height: 20px;
+      text-transform: uppercase;
+      background: none;
+      border: none;
+      border-bottom:  1px solid rgba($color: $yellow, $alpha: 0);
+      cursor: pointer;
+
+      &.active {
+        color: $yellow;
+        border-bottom:  1px solid rgba($color: $yellow, $alpha: 1);
+      }
+    }
+  }
+
+  &__page {
+    display: none;
+
+    &.active {
+      display: block;
+    }
+  }
+}
