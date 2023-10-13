@@ -16,3 +16,20 @@ nav.addEventListener('click', (event) => {
     });
   }
 });
+
+const sliderIds = ['admiralRostovOnDon', 'thievesSochi', 'patrioticRostovOnDon'];
+
+const sliders = sliderIds.map((id) => {
+  return new Swiper(`#${id}Swiper`, {
+    loop: true,
+
+    pagination: {
+      el: `#${id} .slider__controls-pagination`,
+      clickable: true,
+    },
+    navigation: {
+      nextEl: `#${id} .slider__controls-next`,
+      prevEl: `#${id} .slider__controls-prev`,
+    },
+  });
+});
