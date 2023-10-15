@@ -66,15 +66,11 @@
   }
 
   &__page {
-    display: none;
+    display: flex;
+    gap: 50px;
 
-    &.active {
-      display: flex;
-      gap: 50px;
-
-      @include laptop {
-        display: block;
-      }
+    @include laptop {
+      display: block;
     }
   }
 

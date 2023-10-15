@@ -100,16 +100,13 @@ a {
   border-bottom: 1px solid #e3b873;
 }
 .slider__page {
-  display: none;
-}
-.slider__page.active {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
   gap: 50px;
 }
 @media (max-width: 992px) {
-  .slider__page.active {
+  .slider__page {
     display: block;
   }
 }
