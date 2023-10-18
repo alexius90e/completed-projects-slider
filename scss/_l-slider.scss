@@ -6,12 +6,15 @@
   background-color: $black;
 
   &__container {
+    display: flex;
+    flex-wrap: wrap;
     max-width: 1170px;
     margin: 0 auto;
     padding: 0 16px;
   }
 
   &__nav {
+    flex: 1 1 0;
     display: flex;
     gap: 50px;
 
@@ -74,34 +77,33 @@
     }
   }
 
-  &__swiper {
+  &-item {
     position: relative;
     flex: 0 1 680px;
     order: 1;
-    background-color: #333333;
+    overflow: hidden;
+    aspect-ratio: 4 / 3;
 
     @include laptop {
-      display: block;
-      max-width: 100%;
-      margin-bottom: 32px;
-      aspect-ratio: 1.45 / 1;
+      margin-bottom: 50px;
     }
 
-    & .swiper {
+    &__wrapper {
       position: absolute;
       top: 0;
-      left: 0;
-      right: 0;
       bottom: 0;
-      height: 100%;
-      width: 100%;
+      display: flex;
+      transform: translateX(-0%);
+      transition: all ease-in-out 0.3s;
     }
 
-    & img {
-      max-width: 100%;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    &__slide {
+      flex: 0 0 100%;
+      & img {
+        max-width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
     }
   }
 
@@ -134,13 +136,21 @@
     }
 
     &-pagination {
-      // flex: 0 0 auto;
+      display: flex;
       max-width: max-content;
+      gap: 8px;
 
-      & .swiper-pagination-bullet {
+      &-bullet {
         width: 10px;
         height: 10px;
+        border-radius: 10px;
         background-color: $white;
+        opacity: 0.5;
+        cursor: pointer;
+
+        &.active {
+          opacity: 1;
+        }
       }
     }
   }

@@ -34,11 +34,19 @@ a {
   background-color: #131313;
 }
 .slider__container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   max-width: 1170px;
   margin: 0 auto;
   padding: 0 16px;
 }
 .slider__nav {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 0px;
+          flex: 1 1 0;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -110,7 +118,7 @@ a {
     display: block;
   }
 }
-.slider__swiper {
+.slider-item {
   position: relative;
   -webkit-box-flex: 0;
       -ms-flex: 0 1 680px;
@@ -118,28 +126,34 @@ a {
   -webkit-box-ordinal-group: 2;
       -ms-flex-order: 1;
           order: 1;
-  background-color: #333333;
+  overflow: hidden;
+  aspect-ratio: 4/3;
 }
 @media (max-width: 992px) {
-  .slider__swiper {
-    display: block;
-    max-width: 100%;
-    margin-bottom: 32px;
-    aspect-ratio: 1.45/1;
+  .slider-item {
+    margin-bottom: 50px;
   }
 }
-.slider__swiper .swiper {
+.slider-item__wrapper {
   position: absolute;
   top: 0;
-  left: 0;
-  right: 0;
   bottom: 0;
-  height: 100%;
-  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-transform: translateX(0%);
+      -ms-transform: translateX(0%);
+          transform: translateX(0%);
+  -webkit-transition: all ease-in-out 0.3s;
+  transition: all ease-in-out 0.3s;
 }
-.slider__swiper img {
+.slider-item__slide {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 100%;
+          flex: 0 0 100%;
+}
+.slider-item__slide img {
   max-width: 100%;
-  width: 100%;
   height: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -181,14 +195,24 @@ a {
           transform: rotate(180deg);
 }
 .slider__controls-pagination {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   max-width: -webkit-max-content;
   max-width: -moz-max-content;
   max-width: max-content;
+  gap: 8px;
 }
-.slider__controls-pagination .swiper-pagination-bullet {
+.slider__controls-pagination-bullet {
   width: 10px;
   height: 10px;
+  border-radius: 10px;
   background-color: #ffffff;
+  opacity: 0.5;
+  cursor: pointer;
+}
+.slider__controls-pagination-bullet.active {
+  opacity: 1;
 }
 .slider__data {
   position: relative;
